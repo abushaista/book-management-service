@@ -1,5 +1,6 @@
 package com.arif.bookmanagementservice.service;
 
+import com.arif.bookmanagementservice.controller.exception.ResourceNotFoundException;
 import com.arif.bookmanagementservice.dto.CreateCategoryRequest;
 import com.arif.bookmanagementservice.dto.UpdateCategoryRequest;
 import com.arif.bookmanagementservice.entity.CategoryEntity;
@@ -32,7 +33,7 @@ public class CategoryService {
     }
     public CategoryEntity getById(UUID id) {
         return this.repository.findById(id).orElseThrow(
-                ()-> new IllegalArgumentException("Category does not exist"));
+                ()-> new ResourceNotFoundException("Category does not exist"));
     }
     public void deleteById(UUID id) {
         this.repository.deleteById(id);
