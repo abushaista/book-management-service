@@ -64,8 +64,8 @@ public class BookService {
     }
 
     public void DeleteBook(UUID id){
-        if(!this.categoryRepository.existsById(id)){
-            throw new ResourceNotFoundException("Category not found");
+        if(!this.bookRepository.existsById(id)){
+            throw new ResourceNotFoundException("Book not found");
         }
         this.bookRepository.deleteById(id);
     }
