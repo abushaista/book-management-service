@@ -46,4 +46,10 @@ public class BookController {
     public void updateBook(@PathVariable UUID id, @Valid @RequestBody UpdateBookRequest request) {
         this.bookService.UpdateBook(id, request);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBook(@PathVariable UUID id) {
+        this.bookService.DeleteBook(id);
+    }
 }
