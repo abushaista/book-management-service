@@ -1,9 +1,10 @@
 package com.arif.bookmanagementservice.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.UUID;
-
+@Data
 @Entity
 @Table(name = "categories")
 public class CategoryEntity {
